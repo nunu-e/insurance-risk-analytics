@@ -1,6 +1,8 @@
-data/
-*.csv
-*.pkl
+# data files (raw data only)
+data/*.csv
+data/*.pkl
+
+# Python cache
 __pycache__/
 .ipynb_checkpoints/
 .env
