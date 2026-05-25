@@ -2,15 +2,22 @@
 
 ## Project Overview
 
-This project analyzes historical auto insurance data to uncover risk patterns, profitability drivers, and customer segments for AlphaCare Insurance Solutions (ACIS). The analysis supports evidence-based decision making for pricing optimization, risk segmentation, and marketing strategy improvement.
+This project analyzes historical auto insurance data to uncover risk patterns, profitability drivers, and customer segments for AlphaCare Insurance Solutions (ACIS).
 
-The project covers:
+The objective is to support evidence-based decision-making for:
+
+- Risk-based pricing
+- Customer segmentation
+- Marketing optimization
+- Profitability improvement
+
+The project follows a full data science pipeline including:
 
 - Exploratory Data Analysis (EDA)
 - Statistical hypothesis testing
 - Data Version Control (DVC)
 - Predictive modeling
-- Risk-based pricing analytics
+- Risk-based pricing framework
 
 ---
 
@@ -18,23 +25,24 @@ The project covers:
 
 The main objectives of this project are to:
 
-- Understand insurance risk patterns across customer and vehicle segments
-- Analyze profitability using Loss Ratio and Margin metrics
-- Identify high-risk and low-risk groups
-- Build predictive models for claims and premium optimization
-- Develop reproducible and auditable data workflows
+- Understand insurance risk patterns across customer, vehicle, and geographic segments
+- Analyze profitability using **Loss Ratio** and **Margin**
+- Identify high-risk and low-risk customer groups
+- Statistically validate risk differences across segments
+- Build predictive models for claims and pricing optimization
+- Ensure reproducible and auditable data workflows using DVC
 
 ---
 
 # Dataset Description
 
-The dataset contains historical insurance records from February 2014 to August 2015.
+The dataset contains historical insurance records from **February 2014 to August 2015**, including policy-level, customer-level, and vehicle-level information.
 
 ### Included Information
 
 - Customer demographics
-- Vehicle details
-- Policy information
+- Vehicle characteristics
+- Policy and coverage details
 - Premium payments
 - Claim history
 
@@ -44,25 +52,26 @@ The dataset contains historical insurance records from February 2014 to August 2
 - `TotalClaims`
 - `Province`
 - `VehicleType`
-- `AutoMake`
+- `Make`
+- `Model`
 - `CustomValueEstimate`
-- `TransactionDate`
+- `TransactionMonth`
 
 ---
 
-# Derived Metrics
+# Derived Business Metrics
 
-Two important business metrics were created:
+Two key actuarial metrics were engineered:
 
-## Loss Ratio
+## 🔹 Loss Ratio
 
 :contentReference[oaicite:0]{index=0}
 
-Measures portfolio profitability and insurance risk.
+Measures portfolio profitability and insurance risk exposure.
 
 ---
 
-## Margin
+## 🔹 Margin
 
 :contentReference[oaicite:1]{index=1}
 
@@ -74,65 +83,56 @@ Represents the profit contribution per policy.
 
 The EDA process included:
 
-- Data summarization and type inspection
-- Missing value analysis
-- Univariate analysis
+- Data summarization and data type validation
+- Missing value analysis and handling strategy
+- Univariate analysis (distributions of key variables)
 - Bivariate and multivariate analysis
-- Geographic trend analysis
-- Outlier detection
+- Geographic risk analysis
+- Outlier detection using boxplots
 
-### Key Findings
+---
 
-- The dataset contains no missing values.
-- Claim-related variables are highly right-skewed with significant outliers.
-- Loss ratios vary across provinces and vehicle categories.
-- Certain vehicle makes are associated with higher average claim amounts.
-- Temporal trends suggest fluctuations in claim severity over time.
+## Key Insights
+
+- The dataset has **low missing value rates**, indicating high data quality.
+- Claim-related variables are **highly right-skewed**, indicating presence of extreme claims.
+- Loss ratios vary significantly across:
+  - Provinces
+  - Vehicle types
+- Certain vehicle makes/models are associated with higher claim severity.
+- Temporal trends show fluctuations in claim behavior over the observed period.
 
 ---
 
 # Visualizations
 
-The project includes several business-focused visualizations:
+The project includes the following key visualizations:
 
 - Loss Ratio by Province
 - Premium vs Claims Scatter Plot
-- Monthly Claims Trend
+- Monthly Claims Trend Analysis
 - Vehicle Make Risk Comparison
-- Correlation Matrix
+- Correlation Heatmap of Financial Variables
+
+These visualizations provide insights into risk distribution and profitability drivers.
 
 ---
 
-# Technologies Used
+# Data Version Control (DVC)
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
-- SciPy
-- Jupyter Notebook
-- DVC
-- Git & GitHub
+This project uses **DVC (Data Version Control)** to ensure reproducibility and auditability of datasets.
 
-CI/CD pipeline implemented using:
+### Features:
 
-:contentReference[oaicite:2]{index=2}
+- Raw dataset versioning
+- Cleaned dataset tracking
+- External storage remote setup
+- Reproducible pipeline for data loading
 
----
+### Reproducibility:
 
-# Project Structure
+To reproduce the dataset:
 
-```text
-insurance-risk-analytics/
-├── .github/
-├── data/
-├── notebooks/
-├── src/
-├── tests/
-├── reports/
-├── requirements.txt
-├── README.md
-└── .gitignore
+```bash
+dvc pull
 ```
