@@ -7,3 +7,4 @@ scipy
 jupyter
 pytest
 flake8
+dvc
