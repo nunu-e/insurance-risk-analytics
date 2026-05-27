@@ -1,8 +1,26 @@
 import pandas as pd
+import logging
 
+logging.basicConfig(level=logging.INFO)
 
-def load_data(path):
+def load_data(path: str):
     """
-    Load insurance dataset
+    Robust data loader with basic error handling.
     """
-    return pd.read_csv(path)
+
+    try:
+        df = pd.read_csv(path)
+        logging.info(f"Data loaded successfully with shape: {df.shape}")
+        return df
+
+    except FileNotFoundError:
+        logging.error(f"File not found: {path}")
+        raise
+
+    except pd.errors.EmptyDataError:
+        logging.error("File is empty")
+        raise
+
+    except Exception as e:
+        logging.error(f"Unexpected error: {e}")
+        raise

@@ -136,3 +136,12 @@ To reproduce the dataset:
 ```bash
 dvc pull
 ```
+
+## 🔧 Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/nunu-e/insurance-risk-analytics.git
+cd insurance-risk-analytics
+```
