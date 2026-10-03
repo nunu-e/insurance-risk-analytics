@@ -1,138 +1,111 @@
 # Insurance Risk Analytics
 
-## Project Overview
+A Python-based data analysis and machine learning project for exploring insurance risk factors and building predictive models.
 
-This project analyzes historical auto insurance data to uncover risk patterns, profitability drivers, and customer segments for AlphaCare Insurance Solutions (ACIS). The analysis supports evidence-based decision making for pricing optimization, risk segmentation, and marketing strategy improvement.
+## Overview
 
-The project covers:
+This project explores insurance-related data through exploratory data analysis, statistical analysis, feature processing, and predictive modeling.
 
-- Exploratory Data Analysis (EDA)
-- Statistical hypothesis testing
-- Data Version Control (DVC)
-- Predictive modeling
-- Risk-based pricing analytics
+The project also emphasizes reproducibility through version-controlled data workflows and automated testing.
 
----
+## Objectives
 
-# Objectives
+* Explore and understand insurance-related data
+* Identify important patterns and relationships
+* Perform statistical analysis
+* Prepare data for machine learning
+* Train predictive models
+* Evaluate model performance
+* Maintain reproducible data workflows
 
-The main objectives of this project are to:
+## Tech Stack
 
-- Understand insurance risk patterns across customer and vehicle segments
-- Analyze profitability using Loss Ratio and Margin metrics
-- Identify high-risk and low-risk groups
-- Build predictive models for claims and premium optimization
-- Develop reproducible and auditable data workflows
+* Python
+* Pandas
+* NumPy
+* SciPy
+* scikit-learn
+* Jupyter
+* DVC
+* GitHub Actions
+* Pytest
 
----
-
-# Dataset Description
-
-The dataset contains historical insurance records from February 2014 to August 2015.
-
-### Included Information
-
-- Customer demographics
-- Vehicle details
-- Policy information
-- Premium payments
-- Claim history
-
-### Key Features
-
-- `TotalPremium`
-- `TotalClaims`
-- `Province`
-- `VehicleType`
-- `AutoMake`
-- `CustomValueEstimate`
-- `TransactionDate`
-
----
-
-# Derived Metrics
-
-Two important business metrics were created:
-
-## Loss Ratio
-
-:contentReference[oaicite:0]{index=0}
-
-Measures portfolio profitability and insurance risk.
-
----
-
-## Margin
-
-:contentReference[oaicite:1]{index=1}
-
-Represents the profit contribution per policy.
-
----
-
-# Exploratory Data Analysis (EDA)
-
-The EDA process included:
-
-- Data summarization and type inspection
-- Missing value analysis
-- Univariate analysis
-- Bivariate and multivariate analysis
-- Geographic trend analysis
-- Outlier detection
-
-### Key Findings
-
-- The dataset contains no missing values.
-- Claim-related variables are highly right-skewed with significant outliers.
-- Loss ratios vary across provinces and vehicle categories.
-- Certain vehicle makes are associated with higher average claim amounts.
-- Temporal trends suggest fluctuations in claim severity over time.
-
----
-
-# Visualizations
-
-The project includes several business-focused visualizations:
-
-- Loss Ratio by Province
-- Premium vs Claims Scatter Plot
-- Monthly Claims Trend
-- Vehicle Make Risk Comparison
-- Correlation Matrix
-
----
-
-# Technologies Used
-
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
-- SciPy
-- Jupyter Notebook
-- DVC
-- Git & GitHub
-
-CI/CD pipeline implemented using:
-
-:contentReference[oaicite:2]{index=2}
-
----
-
-# Project Structure
+## Project Structure
 
 ```text
-insurance-risk-analytics/
+.
 ├── .github/
-├── data/
+│   └── workflows/
 ├── notebooks/
 ├── src/
 ├── tests/
-├── reports/
-├── requirements.txt
+├── data/
 ├── README.md
-└── .gitignore
+└── ...
 ```
+
+## Workflow
+
+```text
+Raw Data
+   |
+   v
+Data Cleaning
+   |
+   v
+Exploratory Analysis
+   |
+   v
+Feature Processing
+   |
+   v
+Statistical Analysis
+   |
+   v
+Machine Learning
+   |
+   v
+Model Evaluation
+```
+
+## Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/nunu-e/insurance-risk-analytics.git
+cd insurance-risk-analytics
+```
+
+Install the project dependencies according to the provided environment configuration.
+
+## Reproducibility
+
+DVC is used to support reproducible data workflows and versioning of data-related artifacts.
+
+## Testing
+
+Run the test suite using:
+
+```bash
+pytest
+```
+
+## Machine Learning
+
+The project uses scikit-learn for predictive modeling and model evaluation.
+
+Model performance should be interpreted using the evaluation metrics reported in the notebooks and project analysis.
+
+## Future Improvements
+
+* Experiment with additional models
+* Improve feature engineering
+* Expand model evaluation
+* Add model explainability
+* Develop a deployable inference service
+* Integrate the model into an application
+
+## License
+
+This project is for educational and portfolio purposes.
